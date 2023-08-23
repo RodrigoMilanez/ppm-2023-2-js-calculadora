@@ -6,18 +6,12 @@
     <title>Calculadora</title>
   </head>
   <body>
-    <header>
-      <h1>Calculadora</h1>
-    </header>
+    <header><h1>Calculadora</h1></header>
     <section>
+      <p><input id="inputNumero1" type="text" placeholder="Número 1" onchange="setNumero1(this)" /></p>
+      <p><input id="inputNumero2" type="text" placeholder="Número 2" onchange="setNumero2(this)"/></p>
       <p>
-        <input type="text" placeholder="Número 1" />
-      </p>
-      <p>
-        <input type="text" placeholder="Número 2" />
-      </p>
-      <p>
-        <select>
+        <select onchange="setOperacao(this)" id="selectOperacao">
           <option value="+" selected>Soma</option>
           <option value="-">Subtração</option>
           <option value="*">Multiplicação</option>
@@ -25,10 +19,12 @@
         </select>
       </p>
       <p>
-        <button>Calcular</button>
-        <button>Limpar</button>
+        <button onclick="calcular()">Calcular</button>
+        <button id="limpar">Limpar</button>
       </p>
-      <p>Resultado: <span></span></p>
+      <p>Resultado: <span id="spanResultado"></span></p>
     </section>
+    <script src="js/calcular.js"></script>
+    <script src="js/limpar.js"></script>
   </body>
 </html>
