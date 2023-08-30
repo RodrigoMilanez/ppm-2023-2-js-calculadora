@@ -7,7 +7,19 @@ document.getElementById("limpar").onclick = function () {
     spanResultado.removeChild(spanResultado.firstChild);
   }
   document.getElementById("selectOperacao").value = "+";
+
+  toggleResult(false);
+  enableCalc();
+  operacaoChange = false;
+  enableClear();
 };
+
+function enableClear() {
+  var value1 = document.getElementById("inputNumero1").value;
+  var value2 = document.getElementById("inputNumero2").value;
+  var hasValue = value1 || value2 || operacaoChange;
+  document.getElementById('limpar').disabled = !hasValue;
+}
 
 //jQuery
 // $('#limpar').click(function() {
